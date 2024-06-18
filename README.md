@@ -1,6 +1,10 @@
 # Dogs Gallery Project
 This project, Dogs Gallery, was originally developed as part of an assignment for our course at Int-College while learning React. It is a React application that showcases different dog breeds using cards and includes a search functionality. The project is built with React and TypeScript, and it fetches dog images from the Dog CEO API. Recently, I have made several updates to the project, including adding new features, improving responsiveness, and cleaning up the codebase.
 
+
+
+
+
 # Features
 Dog Breed Cards: Display information and images for various dog breeds.
 Search Functionality: Users can search for dog breeds by typing in letters. The search feature will filter and display breeds that start with the entered letters.
@@ -25,12 +29,15 @@ npm install
 Run the application:
 npm run dev
 
+# Deployment
+The project is deployed and can be accessed at https://dogs-gallery.onrender.com.
+
 Explore the application:
 Browse through the dog breed cards.
 Use the search input to find breeds by typing letters.
 Click on a dog breed card to navigate to a new page for that breed and chat.
 
 # Acknowledgements
-The images and data are provided by the Dog CEO API.
+The images and data are provided by the Dog CEO API(https://dog.ceo/dog-api/documentation/).
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
