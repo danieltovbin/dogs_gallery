@@ -5,20 +5,20 @@ This project, Dogs Gallery, was originally developed as part of an assignment fo
 
 
 
-# Features
+## Features
 Dog Breed Cards: Display information and images for various dog breeds.
 Search Functionality: Users can search for dog breeds by typing in letters. The search feature will filter and display breeds that start with the entered letters.
 Card Navigation: Clicking on a dog breed card navigates to a new page specific to that breed where users can chat.
 
-# Tools and Technologies
-React: JavaScript library for building user interfaces.
-TypeScript: Strongly typed programming language that builds on JavaScript.
-SCSS: Syntactically Awesome Style Sheets for enhanced styling.
-BEM: Block Element Modifier methodology for naming CSS classes.
-MUI: Material-UI library for React components.
-Dog CEO API: Source of the dog breed images.
+## Tools and Technologies
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
+- **SCSS**: Syntactically Awesome Style Sheets for enhanced styling.
+- **BEM**: Block Element Modifier methodology for naming CSS classes.
+- **MUI**: Material-UI library for React components.
+- **Dog CEO API**: Source of the dog breed images.
 
-# How to Use
+## How to Use
 Clone the repository:
 git clone https://github.com/danieltovbin/dogs_gallery.git
 
@@ -29,7 +29,7 @@ npm install
 Run the application:
 npm run dev
 
-# Deployment
+## Deployment
 The project is deployed and can be accessed at https://dogs-gallery.onrender.com.
 
 Explore the application:
@@ -37,7 +37,8 @@ Browse through the dog breed cards.
 Use the search input to find breeds by typing letters.
 Click on a dog breed card to navigate to a new page for that breed and chat.
 
-# Acknowledgements
+## Acknowledgements
 The images and data are provided by the Dog CEO API(https://dog.ceo/dog-api/documentation/).
-License
+
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
