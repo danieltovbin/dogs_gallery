@@ -50,17 +50,19 @@ const DogsGallery = () => {
     <>
       <TopBar children={<h5 style={{ margin: 0 }}>Art Talks</h5>} />
       <SearchBtn setSearchTerm={setSearchTerm} />
-      <Box>
-        <Grid container rowSpacing={4} columnSpacing={{ md: 5 }} columns={4}>
-          {filteredBreedList.map((breedName) => (
-            <CardProp
-              breedName={breedName}
-              key={breedName}
-              onClick={() => navigareToDiscussion(breedName)}
-            />
-          ))}
-        </Grid>
-      </Box>
+      {dog && (
+        <Box>
+          <Grid container rowSpacing={4} columnSpacing={{ md: 5 }} columns={4}>
+            {filteredBreedList.map((breedName) => (
+              <CardProp
+                breedName={breedName}
+                key={breedName}
+                onClick={() => navigareToDiscussion(breedName)}
+              />
+            ))}
+          </Grid>
+        </Box>
+      )}
     </>
   );
 };

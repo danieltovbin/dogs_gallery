@@ -46,6 +46,13 @@
       justify-content: space-evenly;
       align-items: flex-end;
 
+      p {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        width: 50%;
+        margin: auto;
+      }
+
       input {
         width: 80%;
         height: 22px;
