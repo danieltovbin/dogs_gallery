@@ -73,7 +73,14 @@
 
 
 @media (max-width: 700px){
+    h5 {
+      display: none;
+    }
     .discussionPage__container{
         flex-direction: column;
     }
+    .MuiPaper-elevation1{
+      margin-left: 15px;
+    }
 }
+

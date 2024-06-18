@@ -26,7 +26,6 @@ const DogsGallery = () => {
   const handleGetDog = async () => {
     try {
       const getData = await getDog();
-
       if (getData) {
         setDog(getData);
       }
