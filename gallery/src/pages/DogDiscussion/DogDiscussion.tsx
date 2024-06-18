@@ -8,6 +8,7 @@ const DogDiscussion = () => {
   const { breedName } = useParams<{ breedName: string }>();
   const [breedImg, setBreedImg] = useState<string | null>(null);
   const [message, setMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchBreedImg = async () => {
     try {
@@ -16,8 +17,10 @@ const DogDiscussion = () => {
         const breedImg = data.message;
         setBreedImg(breedImg);
       }
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
@@ -31,30 +34,36 @@ const DogDiscussion = () => {
   return (
     <div className="discussionPage">
       <TopBar />
-      <h1>
-        {breedName
-          ? breedName?.charAt(0).toUpperCase() + breedName?.slice(1)
-          : breedName}
-      </h1>
-      <div className="discussionPage__container">
-        {breedImg && (
-          <div className="discussionPage__breedImgTrue">
-            <img src={breedImg} alt={breedName || "Breed Image"} />
+      {isLoading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <>
+          <h1>
+            {breedName
+              ? breedName?.charAt(0).toUpperCase() + breedName?.slice(1)
+              : breedName}
+          </h1>
+          <div className="discussionPage__container">
+            {breedImg && (
+              <div className="discussionPage__breedImgTrue">
+                <img src={breedImg} alt={breedName || "Breed Image"} />
+              </div>
+            )}
+            <div className="discussionPage__discussion">
+              <h6>Chat</h6>
+              <p>{message}</p>
+              <div className="discussionPage__discussion__inputContainer">
+                <input
+                  type="text"
+                  placeholder="Type your message here"
+                  onChange={handleInputChange}
+                />
+                <button>Send</button>
+              </div>
+            </div>
           </div>
-        )}
-        <div className="discussionPage__discussion">
-          <h6>Chat</h6>
-          <p>{message}</p>
-          <div className="discussionPage__discussion__inputContainer">
-            <input
-              type="text"
-              placeholder="Type your message here"
-              onChange={handleInputChange}
-            />
-            <button>Send</button>
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

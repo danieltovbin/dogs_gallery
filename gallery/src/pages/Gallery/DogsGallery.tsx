@@ -20,6 +20,7 @@ const BreedList = [
 const DogsGallery = () => {
   const [dog, setDog] = useState<string[]>();
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const handleGetDog = async () => {
@@ -29,6 +30,7 @@ const DogsGallery = () => {
       if (getData) {
         setDog(getData);
       }
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -49,19 +51,30 @@ const DogsGallery = () => {
   return (
     <>
       <TopBar children={<h5 style={{ margin: 0 }}>Art Talks</h5>} />
-      <SearchBtn setSearchTerm={setSearchTerm} />
-      {dog && (
-        <Box>
-          <Grid container rowSpacing={4} columnSpacing={{ md: 5 }} columns={4}>
-            {filteredBreedList.map((breedName) => (
-              <CardProp
-                breedName={breedName}
-                key={breedName}
-                onClick={() => navigareToDiscussion(breedName)}
-              />
-            ))}
-          </Grid>
-        </Box>
+      {isLoading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <>
+          <SearchBtn setSearchTerm={setSearchTerm} />
+          {dog && (
+            <Box>
+              <Grid
+                container
+                rowSpacing={4}
+                columnSpacing={{ md: 5 }}
+                columns={4}
+              >
+                {filteredBreedList.map((breedName) => (
+                  <CardProp
+                    breedName={breedName}
+                    key={breedName}
+                    onClick={() => navigareToDiscussion(breedName)}
+                  />
+                ))}
+              </Grid>
+            </Box>
+          )}{" "}
+        </>
       )}
     </>
   );
